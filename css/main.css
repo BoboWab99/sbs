@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+:root {
+   --ziq-orange-code: 188 51 15;
+   --ziq-blue-code: 21 104 225;
+
+   --ziq-orange: rgb(var(--ziq-orange-code));
+   --ziq-blue: rgb(var(--ziq-blue-code));
+   --ziq-container-width: 100%;
+   --ziq-header-height: 60px;
+   --ziq-nav-height: 70px;
+}
+
+html,
+body {
+   width: 100%;
+   height: 100%;
+   font-family: 'Nunito', sans-serif;
+   font-size: 15px;
+}
+
+ol, ul {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+}
+
+a {text-decoration: none;}
+img {max-width: 100%}
+label {color: rgb(65 68 70);}
+
+input, 
+button,
+select,
+textarea {
+   outline: none;
+}
+
+.btn {
+   text-transform: uppercase;
+   font-size: 0.9rem;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance:none;
+}
+
+.logo {
+   font-size: 1.5rem;
+   font-weight: 500;
+}
+
+.gap-sm {gap: 0.5rem;}
+.gap-md {gap: 1rem;}
+
+.fw-400 {font-weight: 400 !important;}
+.fw-500 {font-weight: 500 !important;}
+.fw-600 {font-weight: 600 !important;}
+.fw-700 {font-weight: 700 !important;}
+.fw-800 {font-weight: 800 !important;}
+.fw-900 {font-weight: 900 !important;}
+
+/* INPUT LINE FOCUS */
+.line-focus {
+   position: relative;
+   border-bottom: 1px solid #ddd;
+}
+
+.line-focus::after {
+   width: 0;
+   height: 2px;
+   position: absolute;
+   left: 50%;
+   bottom: -1px;
+   background: var(--bs-blue);
+   transition: 0.25s ease-in-out;
+   content: '';
+}
+
+.line-focus.active::after {
+   width: 100%;
+   left: 0;
+}
+
+.line-focus > label {
+   text-transform: uppercase;
+   font-size: 0.9rem;
+}
+
+.line-focus-input {
+   padding-left: 0;
+   padding-right: 0;
+   border: 0;
+}
+
+.line-focus-input:focus {
+   box-shadow: none;
+}
+
+.floating-label {
+   position: relative;
+   transition: 0.25s ease-in-out;
+}
+
+.floating-label > label {
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100%;
+   color: #999;
+   pointer-events: none;
+   transition: 0.15s ease-in-out;
+}
+
+.floating-label > label.active {
+   transform: translate(0, -1.2rem);
+   font-size: 0.75rem;
+}
+
+@media screen and (min-width: 768px) {
+   .page-login {
+      background-color: rgba(173 216 230 / 0.1);
+      overflow: hidden;
+   }
+
+   .page-login .logo {
+      position: fixed;
+      top: 2rem;
+      left: 3rem;
+      display: block !important;
+   }  
+
+   .container-form-login {
+      max-height: 85%;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0 0 0 / 0.1);
+   }
+}
+
+.container-form-login {
+   background-color: rgb(255 255 255);
+   max-width:450px;
+   width: 100%;
+   margin: auto;
+}
+
+.form-login {
+   overflow-y: auto;
+}
+
+.form-login-header {
+   height: 50px;
+   background-color: rgb(173 216 230);
+   border-top-left-radius: inherit;
+   border-top-right-radius: inherit;
+   gap: 0.5rem;
+}
+
+.login-header-icon i {
+   font-size: 45px;
+   color: rgba(255 255 255 / 0.8);
+}
+
+.form-login-nav {
+   gap: 1rem;
+}
+
+.form-login-nav-item {
+   display: inline-block;
+   padding: 1rem;
+   position: relative;
+   color: #212529;
+}
+
+.form-login-nav-item::before {
+   content: "";
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   height: 3px;
+   width: 100%;
+   border-top-left-radius: 0.25rem;
+   border-top-right-radius: 0.25rem;
+}
+
+.form-login-nav-item.active {
+   color: #0d6efd;
+}
+
+.form-login-nav-item.active::before {
+   background-color: #0d6efd;
+}
