@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>User Dashboard</title>
+   <!-- Bootstrap css -->
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+   <!-- Custom css -->
+   <link rel="stylesheet" href="../../css/main.css">
+   <!-- Fontawesome -->
+   <script src="https://kit.fontawesome.com/e307a20384.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="overflow-hidden">
+
+   <div class="dashboard-layout">
+      <div class="upper-left d-flex align-items-end pb-3">
+         <a href="#" class="logo">Logo</a>
+      </div>
+
+      <div class="upper-right d-flex align-items-end justify-content-between pb-3">
+         <div class="col1 w-50">
+            <form action="#" class="search-form">
+               <input type="search" class="form-control" name="filter" id="filter" placeholder="Search...">
+            </form>
+         </div>
+
+         <div class="col2 d-flex align-items-center gap-md">
+            <div class="notifications">
+               <div class="dropdown">
+                  <button class="btn btn-light circle-sm dropdown-toggle bg-white border-0 no-arrow" type="button"
+                     id="btn-notifications" data-bs-toggle="dropdown" aria-expanded="false">
+                     <i class="fa-solid fa-bell fs-5"></i>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="btn-notifications">
+                     <li><a class="dropdown-item" href="#">Action</a></li>
+                     <li><a class="dropdown-item" href="#">Another action</a></li>
+                     <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+               </div>
+            </div>
+
+            <div class="profile d-inline-flex align-items-center gap-sm">
+               <div class="circle-sm img-crop-x">
+                  <img src="../../media/img/profile.jpg" alt="">
+               </div>
+
+               <div class="dropdown">
+                  <span class="btn-profile dropdown-toggle bg-white" type="button" id="btn-profile"
+                     data-bs-toggle="dropdown" aria-expanded="false">
+                     John Doe
+                  </span>
+                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="btn-profile">
+                     <div class="py-2 text-center">
+                        <div class="px-4">
+                           <div class="fs-5">John Doe</div>
+                           <div class="text-muted">jdoe@example.com</div>
+                        </div>
+
+                        <hr class="dropdown-divider my-3">
+
+                        <div class="d-flex flex-column text-start px-4">
+                           <a href="#" class="left-nav-item py-2 mb-2">
+                              <i class="fa-solid fa-circle-user"></i>
+                              <span class="ms-3">View Profile</span>
+                           </a>
+                           <a href="../login.html" class="left-nav-item py-2">
+                              <i class="fa-solid fa-power-off"></i>
+                              <span class="ms-3">Logout</span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class="left-nav">
+
+         <div class="left-nav-upper">
+            <button class="btn btn-primary d-flex align-items-center justify-content-between w-100" data-bs-toggle="modal" data-bs-target="#newRequest">
+               New request
+               <i class="fa-solid fa-plus"></i>
+            </button>
+         </div>
+
+         <nav class="d-flex flex-column">
+            <a href="./dashboard.html" class="left-nav-item btn-icon-text py-3">
+               <i class="fa-solid fa-chart-pie"></i>
+               Overview
+            </a>
+            <a href="./requests.html" class="left-nav-item btn-icon-text active py-3">
+               <i class="fa-solid fa-paper-plane"></i>
+               My requests
+            </a>
+            <a href="./statuses.html" class="left-nav-item btn-icon-text py-3">
+               <i class="fa-solid fa-sync"></i>
+               Request status
+            </a>
+
+            <div class="py-4"></div>
+
+            <a href="#" class="left-nav-item btn-icon-text py-3">
+               <i class="fa-solid fa-circle-user"></i>
+               Profile
+            </a>
+            <a href="#" class="left-nav-item btn-icon-text py-3">
+               <i class="fa-solid fa-gear"></i>
+               Settings
+            </a>
+         </nav>
+      </div>
+
+      <main class="main-content">
+         <h3 class="page-title mt-3 mb-5">My requests</h3>
+         
+         <div class="section-filter d-flex align-items-center justify-content-between mb-2">
+            <div class="entries-shown d-inline-flex align-items-center">
+               <span class="me-2">Show</span>
+               <select name="num-entries" id="num-entries" class="form-select">
+                  <option value="0">5</option>
+                  <option value="1">10</option>
+                  <option value="2">15</option>
+               </select>
+               <span class="ms-1">Entries</span>
+            </div>
+         
+            <button class="btn btn-link text-decoration-none text-capitalize d-inline-flex align-items-center fw-500"
+               data-bs-toggle="modal" data-bs-target="#newRequest">
+               <i class="fa-solid fa-plus fs-5"></i>
+               <span class="ms-2 fs-6">New request</span>
+            </button>
+         </div>
+         
+         <div class="rounded overflow-hidden border">
+            <table class="table table-striped m-0 bg-white">
+               <thead>
+                  <tr>
+                     <th scope="col">No</th>
+                     <th scope="col">Request Name</th>
+                     <th scope="col">Operations</th>
+                     <th scope="col"></th>
+                  </tr>
+               </thead>
+               <tbody>
+                  <tr>
+                     <th scope="row">
+                        1
+                        <span class="ms-2 text-success fs-5">
+                           <i class="fa-solid fa-check-double"></i>
+                        </span>                        
+                     </th>
+                     <td>Request 1</td>
+                     <td>
+                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editRequest">Edit</button>
+                        <!-- <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#editRequest">Change status</button> -->
+                        <button class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#disableRequest">Disable</button>
+                     </td>
+                     <td class="text-end">
+                        <div class="dropdown">
+                           <button class="btn circle-sm dropdown-toggle no-arrow" id="dropdownMenuBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="fa-solid fa-ellipsis-vertical"></i>
+                           </button>
+
+                           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuBtn">
+                              <li>
+                                 <a href="#" class="dropdown-item btn-icon-text" data-bs-toggle="modal" data-bs-target="#updateStatus">
+                                    <i class="fa-solid fa-sync text-primary"></i>
+                                    Change status
+                                 </a>
+                              </li>
+                           </ul>
+                        </div>
+                     </td>
+                  </tr>
+
+                  <tr>
+                     <th scope="row">
+                        2
+                        <span class="ms-2 text-success fs-5">
+                           <i class="fa-solid fa-check-double"></i>
+                        </span>  
+                     </th>
+                     <td>Request 2</td>
+                     <td>
+                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editRequest">Edit</button>
+                        <!-- <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#editRequest">Change status</button> -->
+                        <button class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#disableRequest">Disable</button>
+                     </td>
+                     <td class="text-end">
+                        <div class="dropdown">
+                           <button class="btn circle-sm dropdown-toggle no-arrow" id="dropdownMenuBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="fa-solid fa-ellipsis-vertical"></i>
+                           </button>
+
+                           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuBtn">
+                              <li>
+                                 <a href="#" class="dropdown-item btn-icon-text" data-bs-toggle="modal" data-bs-target="#updateStatus">
+                                    <i class="fa-solid fa-sync text-primary"></i>
+                                    Change status
+                                 </a>
+                              </li>
+                           </ul>
+                        </div>
+                     </td>
+                  </tr>
+
+                  <tr>
+                     <th scope="row">3</th>
+                     <td>Request 3</td>
+                     <td>
+                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editRequest">Edit</button>
+                        <!-- <button class="btn btn-sm btn-info" data-bs-toggle="modal" data-bs-target="#editRequest">Change status</button> -->
+                        <button class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#disableRequest">Disable</button>
+                     </td>
+                     <td class="text-end">
+                        <div class="dropdown">
+                           <button class="btn circle-sm dropdown-toggle no-arrow" id="dropdownMenuBtn" data-bs-toggle="dropdown" aria-expanded="false">
+                              <i class="fa-solid fa-ellipsis-vertical"></i>
+                           </button>
+
+                           <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuBtn">
+                              <li>
+                                 <a href="#" class="dropdown-item btn-icon-text" data-bs-toggle="modal" data-bs-target="#updateStatus">
+                                    <i class="fa-solid fa-sync text-primary"></i>
+                                    Change status
+                                 </a>
+                              </li>
+                           </ul>
+                        </div>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+      </main>
+   </div>
+
+
+   <!-- Modals -->
+   <div class="modal fade" id="newRequest" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="newRequestLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+         <form action="#" class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="newRequestLabel">New Request</h5>
+               <button type="reset" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+   
+            <div class="modal-body">
+               <div class="py-4">
+                  <div class="row mb-3">
+                     <div class="col-md-5">
+                        <label for="">Request name:</label>
+                     </div>
+                     <div class="col-md-7">
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="row mb-3">
+                     <div class="col-md-5">
+                        <label for="">Description:</label>
+                     </div>
+                     <div class="col-md-7">
+                        <textarea name="requestDesc" id="" cols="30" rows="3" class="form-control"></textarea>
+                     </div>
+                  </div>
+                  <div class="row mb-3">
+                     <div class="col-md-5">
+                        <label for="">Destination department:</label>
+                     </div>
+                     <div class="col-md-7">
+                        <select name="destinationDept" id="" class="form-select">
+                           <option value="">Department 1</option>
+                           <option value="">Department 2</option>
+                           <option value="">Department 3</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-5"></div>
+                     <div class="col-md-7">
+                        <button type="submit" class="btn btn-primary">Push Request</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+   
+   <div class="modal fade" id="editRequest" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="editRequestLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+         <form action="#" class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="editRequestLabel">Edit Request</h5>
+               <button type="reset" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+   
+            <div class="modal-body">
+               <div class="py-4">
+                  <div class="row mb-3">
+                     <div class="col-md-5">
+                        <label for="">Request name:</label>
+                     </div>
+                     <div class="col-md-7">
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="row mb-3">
+                     <div class="col-md-5">
+                        <label for="">Description:</label>
+                     </div>
+                     <div class="col-md-7">
+                        <textarea name="requestDesc" id="" cols="30" rows="3" class="form-control"></textarea>
+                     </div>
+                  </div>
+                  <div class="row mb-3">
+                     <div class="col-md-5">
+                        <label for="">Destination department:</label>
+                     </div>
+                     <div class="col-md-7">
+                        <select name="destinationDept" id="" class="form-select">
+                           <option value="">Department 1</option>
+                           <option value="">Department 2</option>
+                           <option value="">Department 3</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-5"></div>
+                     <div class="col-md-7">
+                        <button type="submit" class="btn btn-primary">Push changes</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+   
+   <div class="modal fade" id="updateStatus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="updateStatusLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+         <form action="#" class="modal-content">
+            <div class="modal-header">
+               <h5 class="modal-title" id="updateStatusLabel">Update request status</h5>
+               <button type="reset" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+   
+            <div class="modal-body">
+               <div class="py-4">
+                  <div class="row mb-3">
+                     <div class="col-md-5">
+                        <label for="">Request name:</label>
+                     </div>
+                     <div class="col-md-7">
+                        <input type="text" class="form-control">
+                     </div>
+                  </div>
+                  <div class="row mb-3">
+                     <div class="col-md-5">
+                        <label for="">Status:</label>
+                     </div>
+                     <div class="col-md-7">
+                        <select name="destinationDept" id="" class="form-select">
+                           <option value="">Status 1</option>
+                           <option value="">Status 2</option>
+                           <option value="">Status 3</option>
+                        </select>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-md-5"></div>
+                     <div class="col-md-7">
+                        <button type="submit" class="btn btn-primary">Update status</button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
+   </div>
+   
+   <div class="modal fade" id="disableRequest" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="disableRequestLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+         <form action="#" class="modal-content text-center">
+            <style>
+               .alert-icon i {
+                  font-size: 4rem;
+                  color: rgba(255 0 0 /0.5);
+               }
+            </style>
+   
+            <div class="modal-body">
+               <div class="alert-icon py-2 mb-3">
+                  <i class="fa-solid fa-triangle-exclamation"></i>
+               </div>
+               <h4 class="mb-4">Are you sure?</h4>
+               <p class="m-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, sint ea ipsam quae
+                  fugit quasi eligendi minima consectetur perspiciatis sequi.</p>
+            </div>
+   
+            <div class="modal-footer justify-content-center border-0">
+               <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal" aria-label="Close">Cancel</button>
+               <button type="submit" class="btn btn-primary">Yes, disable it!</button>
+            </div>
+         </form>
+      </div>
+   </div>
+
+
+   <footer>
+      <footer>
+         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+         
+         <script src="../../js/dom/main.js"></script>
+      </footer>
+   </footer>
+
+</body>
+
+</html>

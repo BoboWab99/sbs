@@ -5,7 +5,7 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>User Management | Users</title>
+   <title>User Dashboard</title>
    <!-- Bootstrap css -->
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -15,7 +15,7 @@
    <script src="https://kit.fontawesome.com/e307a20384.js" crossorigin="anonymous"></script>
 </head>
 
-<body class="overflow-hidden page-Users">
+<body class="overflow-hidden">
 
    <div class="dashboard-layout">
       <div class="upper-left d-flex align-items-end pb-3">
@@ -55,22 +55,22 @@
                      John Doe
                   </span>
                   <div class="dropdown-menu dropdown-menu-end" aria-labelledby="btn-profile">
-                     <div class="py-2 text-center">
+                     <div class="pt-2 text-center">
                         <div class="px-4">
                            <div class="fs-5">John Doe</div>
                            <div class="text-muted">jdoe@example.com</div>
                         </div>
 
-                        <hr class="dropdown-divider my-3">
+                        <hr class="dropdown-divider mt-3 mb-2">
 
-                        <div class="d-flex flex-column text-start px-4">
-                           <a href="#" class="left-nav-item py-2 mb-2">
+                        <div class="d-flex flex-column text-start">
+                           <a href="#" class="dropdown-item btn-icon-text">
                               <i class="fa-solid fa-circle-user"></i>
-                              <span class="ms-3">View Profile</span>
+                              View Profile
                            </a>
-                           <a href="#" class="left-nav-item py-2">
+                           <a href="../login.html" class="dropdown-item btn-icon-text">
                               <i class="fa-solid fa-power-off"></i>
-                              <span class="ms-3">Logout</span>
+                              Logout
                            </a>
                         </div>
                      </div>
@@ -84,46 +84,41 @@
 
          <div class="left-nav-upper">
             <button class="btn btn-primary d-flex align-items-center justify-content-between w-100"
-               data-bs-toggle="modal" data-bs-target="#newDept">
-               New User
+               data-bs-toggle="modal" data-bs-target="#newStatus">
+               New Status
                <i class="fa-solid fa-plus"></i>
             </button>
          </div>
 
          <nav class="d-flex flex-column">
-            <a href="./dashboard.html" class="left-nav-item py-3">
+            <a href="./dashboard.html" class="left-nav-item btn-icon-text py-3">
                <i class="fa-solid fa-chart-pie"></i>
-               <span class="ms-3">Overview</span>
+               Overview
             </a>
-            <a href="./departments.html" class="left-nav-item py-3">
-               <i class="fa-solid fa-building-user"></i>
-               <span class="ms-3">Departments</span>
+            <a href="./requests.html" class="left-nav-item btn-icon-text py-3">
+               <i class="fa-solid fa-paper-plane"></i>
+               My requests
             </a>
-            <a href="./user-management.html" class="left-nav-item active py-3">
-               <i class="fa-solid fa-users"></i>
-               <span class="ms-3">User management</span>
+            <a href="./statuses.html" class="left-nav-item active btn-icon-text py-3">
+               <i class="fa-solid fa-sync"></i>
+               Request status
             </a>
 
             <div class="py-4"></div>
 
-            <a href="#" class="left-nav-item py-3">
+            <a href="#" class="left-nav-item btn-icon-text py-3">
                <i class="fa-solid fa-circle-user"></i>
-               <span class="ms-3">Profile</span>
+               Profile
             </a>
-            <a href="#" class="left-nav-item py-3">
+            <a href="#" class="left-nav-item btn-icon-text py-3">
                <i class="fa-solid fa-gear"></i>
-               <span class="ms-3">Settings</span>
+               Settings
             </a>
          </nav>
       </div>
 
       <main class="main-content">
-
-         <nav class="secondary-nav border-bottom d-flex gap-md mb-5">
-            <a href="./user-management.html" class="secondary-nav-item active">Users</a>
-            <a href="./roles.html" class="secondary-nav-item">Roles</a>
-            <a href="./permissions.html" class="secondary-nav-item">Permissions</a>
-         </nav>
+         <h3 class="page-title text-capitalize mt-3 mb-5">Request status options</h3>
 
          <div class="section-filter d-flex align-items-center justify-content-between mb-2">
             <div class="entries-shown d-inline-flex align-items-center">
@@ -137,9 +132,9 @@
             </div>
 
             <button class="btn btn-link text-decoration-none text-capitalize d-inline-flex align-items-center fw-500"
-               data-bs-toggle="modal" data-bs-target="#newDept">
+               data-bs-toggle="modal" data-bs-target="#newStatus">
                <i class="fa-solid fa-plus fs-5"></i>
-               <span class="ms-2 fs-6">New user</span>
+               <span class="ms-2 fs-6">New Status</span>
             </button>
          </div>
 
@@ -148,66 +143,49 @@
                <thead>
                   <tr>
                      <th scope="col">No</th>
-                     <th scope="col">User Name</th>
+                     <th scope="col">Status Name</th>
                      <th scope="col">Operations</th>
                   </tr>
                </thead>
                <tbody>
                   <tr>
                      <th scope="row">1</th>
-                     <td>User 1</td>
+                     <td>Status 1</td>
                      <td>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDept">Edit</button>
-                        <button class="btn btn-secondary" data-bs-toggle="modal"
-                           data-bs-target="#disableDept">Disable</button>
+                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editStatus">Edit</button>
+                        <button class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#disableStatus">Disable</button>
                      </td>
                   </tr>
                   <tr>
                      <th scope="row">2</th>
-                     <td>User 2</td>
+                     <td>Status 2</td>
                      <td>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDept">Edit</button>
-                        <button class="btn btn-secondary" data-bs-toggle="modal"
-                           data-bs-target="#disableDept">Disable</button>
+                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editStatus">Edit</button>
+                        <button class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#disableStatus">Disable</button>
                      </td>
                   </tr>
                   <tr>
                      <th scope="row">3</th>
-                     <td>User 3</td>
+                     <td>Status 3</td>
                      <td>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editDept">Edit</button>
-                        <button class="btn btn-secondary" data-bs-toggle="modal"
-                           data-bs-target="#disableDept">Disable</button>
+                        <button class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#editStatus">Edit</button>
+                        <button class="btn btn-sm btn-secondary" data-bs-toggle="modal" data-bs-target="#disableStatus">Disable</button>
                      </td>
                   </tr>
                </tbody>
             </table>
          </div>
-
-         <nav class="py-4" aria-label="Page Navigation Users">
-            <ul class="pagination">
-               <li class="page-item disabled">
-                  <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-               </li>
-               <li class="page-item active" aria-current="page">
-                  <a class="page-link" href="#">1</a>
-               </li>
-               <li class="page-item"><a class="page-link" href="#">2</a></li>
-               <li class="page-item"><a class="page-link" href="#">3</a></li>
-               <li class="page-item"><a class="page-link" href="#">Next</a></li>
-            </ul>
-         </nav>
       </main>
    </div>
 
 
    <!-- Modals -->
-   <div class="modal fade" id="newDept" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-      aria-labelledby="newDeptLabel" aria-hidden="true">
+   <div class="modal fade" id="newStatus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="newStatusLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
          <form action="#" class="modal-content">
             <div class="modal-header">
-               <h5 class="modal-title" id="newDeptLabel">New User</h5>
+               <h5 class="modal-title" id="newStatusLabel">New Status</h5>
                <button type="reset" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -215,7 +193,7 @@
                <div class="py-4">
                   <div class="row mb-3">
                      <div class="col-md-5">
-                        <label for="" class="mb- text-end flex-shrink-">User name:</label>
+                        <label for="">Status name:</label>
                      </div>
                      <div class="col-md-7">
                         <input type="text" class="form-control">
@@ -224,7 +202,7 @@
                   <div class="row">
                      <div class="col-md-5"></div>
                      <div class="col-md-7">
-                        <button type="submit" class="btn btn-primary">Add User</button>
+                        <button type="submit" class="btn btn-primary">Save Status</button>
                      </div>
                   </div>
                </div>
@@ -233,12 +211,12 @@
       </div>
    </div>
 
-   <div class="modal fade" id="editDept" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-      aria-labelledby="editDeptLabel" aria-hidden="true">
+   <div class="modal fade" id="editStatus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="editStatusLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
          <form action="#" class="modal-content">
             <div class="modal-header">
-               <h5 class="modal-title" id="editDeptLabel">Edit User</h5>
+               <h5 class="modal-title" id="editStatusLabel">Edit Status</h5>
                <button type="reset" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -246,7 +224,7 @@
                <div class="py-4">
                   <div class="row mb-3">
                      <div class="col-md-5">
-                        <label for="" class="mb- text-end flex-shrink-">Change name to:</label>
+                        <label for="">Status name:</label>
                      </div>
                      <div class="col-md-7">
                         <input type="text" class="form-control">
@@ -264,8 +242,8 @@
       </div>
    </div>
 
-   <div class="modal fade" id="disableDept" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-      aria-labelledby="disableDeptLabel" aria-hidden="true">
+   <div class="modal fade" id="disableStatus" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="disableStatusLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
          <form action="#" class="modal-content text-center">
             <style>
@@ -294,14 +272,17 @@
 
 
    <footer>
-      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-         integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-         crossorigin="anonymous"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
-         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
-         crossorigin="anonymous"></script>
-   </footer>
+      <footer>
+         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
 
+         <script src="../../js/dom/main.js"></script>
+      </footer>
+   </footer>
 
 </body>
 
