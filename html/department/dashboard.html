@@ -54,23 +54,24 @@
                      data-bs-toggle="dropdown" aria-expanded="false">
                      John Doe
                   </span>
+
                   <div class="dropdown-menu dropdown-menu-end" aria-labelledby="btn-profile">
-                     <div class="py-2 text-center">
+                     <div class="pt-2 text-center">
                         <div class="px-4">
                            <div class="fs-5">John Doe</div>
                            <div class="text-muted">jdoe@example.com</div>
                         </div>
-
-                        <hr class="dropdown-divider my-3">
-
-                        <div class="d-flex flex-column text-start px-4">
-                           <a href="#" class="left-nav-item py-2 mb-2">
+                  
+                        <hr class="dropdown-divider mt-3 mb-2">
+                  
+                        <div class="d-flex flex-column text-start">
+                           <a href="#" class="dropdown-item btn-icon-text">
                               <i class="fa-solid fa-circle-user"></i>
-                              <span class="ms-3">View Profile</span>
+                              View Profile
                            </a>
-                           <a href="#" class="left-nav-item py-2">
+                           <a href="../login.html" class="dropdown-item btn-icon-text">
                               <i class="fa-solid fa-power-off"></i>
-                              <span class="ms-3">Logout</span>
+                              Logout
                            </a>
                         </div>
                      </div>
@@ -82,40 +83,44 @@
 
       <div class="left-nav">
 
-         <div class="left-nav-upper">
+         <!-- <div class="left-nav-upper">
             <button class="btn btn-primary d-flex align-items-center justify-content-between w-100">
                New user
                <i class="fa-solid fa-plus"></i>
             </button>
-         </div>
+         </div> -->
 
          <nav class="d-flex flex-column">
-            <a href="./dashboard.html" class="left-nav-item active py-3">
+            <a href="./dashboard.html" class="left-nav-item btn-icon-text active py-3">
                <i class="fa-solid fa-chart-pie"></i>
-               <span class="ms-3">Overview</span>
+               Overview
             </a>
-            <a href="./my-requests.html" class="left-nav-item py-3">
+            <a href="./my-requests.html" class="left-nav-item btn-icon-text py-3">
                <i class="fa-solid fa-file-upload"></i>
-               <span class="ms-3">My requests</span>
+               My requests
             </a>
-            <a href="./assigned-requests.html" class="left-nav-item py-3">
+            <a href="./assigned-requests.html" class="left-nav-item btn-icon-text py-3">
                <i class="fa-solid fa-user-plus"></i>
-               <span class="ms-3">Assigned to me</span>
+               Assigned to me
             </a>
-            <a href="./track-request.html" class="left-nav-item py-3">
+            <a href="./statuses.html" class="left-nav-item btn-icon-text py-3">
+               <i class="fa-solid fa-sync"></i>
+               Request status
+            </a>
+            <a href="./track-request.html" class="left-nav-item btn-icon-text py-3">
                <i class="fa-solid fa-list-check"></i>
-               <span class="ms-3">Track request</span>
+               Track request
             </a>
 
             <div class="py-4"></div>
 
-            <a href="#" class="left-nav-item py-3">
+            <a href="#" class="left-nav-item btn-icon-text py-3">
                <i class="fa-solid fa-circle-user"></i>
-               <span class="ms-3">Profile</span>
+               Profile
             </a>
-            <a href="#" class="left-nav-item py-3">
+            <a href="#" class="left-nav-item btn-icon-text py-3">
                <i class="fa-solid fa-gear"></i>
-               <span class="ms-3">Settings</span>
+               Settings
             </a>
          </nav>
       </div>

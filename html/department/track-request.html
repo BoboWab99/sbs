@@ -101,6 +101,10 @@
                <i class="fa-solid fa-user-plus"></i>
                <span class="ms-3">Assigned to me</span>
             </a>
+            <a href="./statuses.html" class="left-nav-item btn-icon-text py-3">
+               <i class="fa-solid fa-sync"></i>
+               Request status
+            </a>
             <a href="./track-request.html" class="left-nav-item active py-3">
                <i class="fa-solid fa-list-check"></i>
                <span class="ms-3">Track request</span>
@@ -140,6 +144,8 @@
             <div class="card-body p-4">
                <div class="fs-5">Department name</div>
 
+               <!-- STATUS CAN BE LONG TEXT, SO CONSIDER THAT -->
+
                <div class="my-4">
                   <div class="text-uppercase text-muted fs-p8">Status</div>
                   <div class="group-arrows" role="group" aria-label="Request statuses">
@@ -162,6 +168,8 @@
                   <button type="button" class="btn btn-primary">
                      View request
                   </button>
+
+                  <!-- READ ONLY CONTENT OF THE ORIGINAL REQUEST -->
                </div>
             </div>
          </div>

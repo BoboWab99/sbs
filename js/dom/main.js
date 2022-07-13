@@ -66,3 +66,76 @@ document.querySelectorAll('.modal').forEach(modal => {
 
    });
 });
+
+// notifications
+var notification = {
+   'INFO': 'primary',
+   'SUCCESS': 'success',
+   'WARNING': 'warning',
+   'DANGER': 'danger',
+};
+
+var alertIcons = {
+   'primary': '<i class="fs-5 fa-solid fa-circle-info"></i>',
+   'success': '<i class="fs-5 fa-solid fa-circle-check"></i>',
+   'warning': '<i class="fs-5 fa-solid fa-triangle-exclamation"></i>',
+   'danger': '<i class="fs-5 fa-solid fa-triangle-exclamation"></i>',
+};
+
+var notifyContainer = '#notify .container';
+
+// error
+function notifyError(text, autohide=true) {
+   if(autohide) notifyAutoHide(notification.DANGER, text);
+   else notify(notification.DANGER, text);
+}
+
+// success
+function notifySuccess(text, autohide =true) {
+   if (autohide) notifyAutoHide(notification.SUCCESS, text);
+   else notify(notification.SUCCESS, text);
+}
+
+// info
+function notifyInfo(text, autohide=true) {
+   if (autohide) notifyAutoHide(notification.INFO, text);
+   else notify(notification.INFO, text);
+}
+
+// warning
+function notifyWarning(text, autohide=true) {
+   if (autohide) notifyAutoHide(notification.WARNING, text);
+   else notify(notification.WARNING, text);
+}
+
+// implementation
+(function ($) {
+   $.fn.autoHideNotification = function () {
+      setTimeout(function () {
+         $(".alert-notify").alert('close');
+      }, 3000);
+   };
+})(jQuery);
+
+async function notifyAutoHide(alertType, text) {
+   notify(alertType, text).then(() => {
+      $(notifyContainer).autoHideNotification();
+   });
+}
+
+async function notify(alertType, text) {
+   let notifyDiv = document.querySelector(notifyContainer);
+   if (!notifyDiv) return;
+
+   let content = `
+   <div class="alert-notify alert alert-${alertType} alert-dismissible fade show d-flex shadow mt-1" role="alert">
+      <span class="flex-shrink-0 me-3" role="img" aria-label="${alertType}:">
+         ${alertIcons[alertType]}
+      </span>
+      <div>${text}</div>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+   </div>
+   `;
+   notifyDiv.innerHTML = content;
+}
+// END notifications

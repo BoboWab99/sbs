@@ -127,10 +127,12 @@ textarea {
 .btn-icon-text {
    display: grid;
    grid-template-columns: 2.4rem 1fr;
-   align-items: center;
 }
 .btn-icon-text > *:first-child {
    font-size: 1.2rem;
+}
+.btn-icon-text.left-nav-item {
+   grid-template-columns: 3rem 1fr;
 }
 
 input[type="search"]::-webkit-search-decoration,
