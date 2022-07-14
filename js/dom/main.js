@@ -139,3 +139,14 @@ async function notify(alertType, text) {
    notifyDiv.innerHTML = content;
 }
 // END notifications
+
+// menu
+var menuBtn = document.getElementById('menuBtn');
+var dashLayout = document.querySelector('.dashboard-layout');
+menuBtn.addEventListener('click', () => {
+   if (dashLayout.classList.contains('shrink')) {
+      dashLayout.classList.remove('shrink');
+   } else {
+      dashLayout.classList.add('shrink');
+   }
+});

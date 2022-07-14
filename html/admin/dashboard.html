@@ -21,7 +21,13 @@
 
    <div class="dashboard-layout">
       <div class="upper-left d-flex align-items-end pb-3">
-         <a href="#" class="logo">Logo</a>
+         <!-- menu -->
+         <div class="left-nav-item btn-icon-text align-items-center">
+            <button class="btn circle-sm" id="menuBtn">
+               <i class="fa-solid fa-bars"></i>
+            </button>            
+            <a href="#" class="logo">Logo</a>
+         </div>
       </div>
 
       <div class="upper-right d-flex align-items-end justify-content-between pb-3">
@@ -94,26 +100,26 @@
          <nav class="d-flex flex-column">
             <a href="./dashboard.html" class="left-nav-item btn-icon-text active py-3">
                <i class="fa-solid fa-chart-pie"></i>
-               Overview
+               <span class="nav-item-text">Overview</span>
             </a>
             <a href="./departments.html" class="left-nav-item btn-icon-text py-3">
                <i class="fa-solid fa-building-user"></i>
-               Departments
+               <span class="nav-item-text">Departments</span>
             </a>
             <a href="./user-management.html" class="left-nav-item btn-icon-text py-3">
                <i class="fa-solid fa-users"></i>
-               User management
+               <span class="nav-item-text">User management</span>
             </a>
 
             <div class="py-4"></div>
 
             <a href="#" class="left-nav-item btn-icon-text py-3">
                <i class="fa-solid fa-circle-user"></i>
-               Profile
+               <span class="nav-item-text">Profile</span>
             </a>
             <a href="#" class="left-nav-item btn-icon-text py-3">
                <i class="fa-solid fa-gear"></i>
-               Settings
+               <span class="nav-item-text">Settings</span>
             </a>
          </nav>
       </div>
@@ -159,7 +165,6 @@
    <footer>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
          integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
          integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
          crossorigin="anonymous"></script>
@@ -169,9 +174,9 @@
 
       <script src="../../js/dom/main.js"></script>
 
-      <script>
+      <!-- <script>
          notifyInfo('DONE!', false);
-      </script>
+      </script> -->
    </footer>
    
 </body>
